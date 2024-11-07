@@ -183,24 +183,33 @@
     </nav>
   </header>
 
-  <div class="episode-container">
-    <div class="episode-hero">
-      <div class="episode-info">
-        <h1 class="series-title">Boku no hero</h1>
-        <h2 class="episode-title">E1 - Izuku Midoriya: um origem</h2>
-        <div class="episode-details">
-          <span>Temporada 1</span>
-          <span>Episódio 1</span>
-          <span>49min</span>
-        </div>
-        <p class="episode-description">
-          Izuku Midoriya deseja desesperadamente se tornar um super-herói, mas ele é um dos poucos em sua geração que nasceu sem Individualidade. Será que o contador o super-herói número um, All Might, mudará o seu destino? 
-        </p>
-        <div class="controls">
-          <button class="play-button" onclick="window.location.href='https://rr5---sn-bg0ezn7e.googlevideo.com/videoplayback?expire=1730989257&ei=SVwsZ-2sLJ7Iy_sP4vO3wQY&ip=170.82.49.139&id=ce10ee54647adf73&itag=18&source=blogger&xpc=Egho7Zf3LnoBAQ%3D%3D&susc=bl&eaua=cUMeWknJzJc&mime=video/mp4&vprv=1&rqh=1&dur=1461.603&lmt=1523132368244926&sparams=expire,ei,ip,id,itag,source,xpc,susc,eaua,mime,vprv,rqh,dur,lmt&sig=AJfQdSswRAIgCK0P55bjkNNCyDilvz1rOeeHC7Vb4D2uAqvvByBOBwYCIDfvseSKmIdJt9B7jUDwSZYyHg6gcVfdGoNHFtvoFkPr&cpn=KH8P3eLPMpoJM7L9&c=WEB_EMBEDDED_PLAYER&cver=1.20241104.01.00&redirect_counter=1&cm2rm=sn-bpb5oxun0acg-2v5e7e&rrc=80&fexp=24350590,24350675,24350705,24350737&req_id=d5ae8ff91909a3ee&cms_redirect=yes&cmsv=e&met=1730960575,&mh=kl&mm=29&mn=sn-bg0ezn7e&ms=rdu&mt=1730960234&mv=m&mvi=5&pl=24&rms=rdu,au&lsparams=met,mh,mm,mn,ms,mv,mvi,pl,rms&lsig=ACJ0pHgwRAIgQcg0CH0bZn4wsbl491irnIJLtu9OcHnJjLZxHpkWuQICIDfZLz8U4cTgQVikFpfx2WGBwQcS-0vlxUT32dzGhM0q>
-            ▶ Assistir
-          </button>
-          <button class="add-button">
+<div class="episode-container">
+  <div class="episode-hero">
+    <div class="episode-info">
+      <h1 class="series-title">Boku no hero</h1>
+      <h2 class="episode-title">E1 - Izuku Midoriya: uma origem</h2>
+      <div class="episode-details">
+        <span>Temporada 1</span>
+        <span>Episódio 1</span>
+        <span>49min</span>
+      </div>
+      <p class="episode-description">
+        Izuku Midoriya deseja desesperadamente se tornar um super-herói, mas ele é um dos poucos em sua geração que nasceu sem Individualidade. Será que o contador o super-herói número um, All Might, mudará o seu destino?
+      </p>
+      <div class="controls">
+        <button class="play-button" onclick="document.getElementById('videoPlayer').style.display='block'; this.style.display='none';">
+          ▶ Assistir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Player Embed -->
+  <div id="videoPlayer" style="display:none; margin-top:20px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ID_DO_VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
             + Minha Lista
           </button>
         </div>
