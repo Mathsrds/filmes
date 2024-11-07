@@ -1,0 +1,203 @@
+<html><head><base href="." />
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    background-color: #141414;
+    color: #fff;
+  }
+
+  .header {
+    background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: #E50914;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  .hero {
+    height: 80vh;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.8) 100%),
+                url('https://assets.nflxext.com/ffe/siteui/vlv3/6e32b96a-d4be-4e44-a19b-1bd2d2279b51/ee068656-14b9-4821-89b4-53b4937d9f1c/BR-pt-20220516-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .rows {
+    padding: 40px;
+  }
+
+  .row-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .movie-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+
+  .movie-card {
+    min-width: 200px;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+
+  .movie-card:hover {
+    transform: scale(1.1);
+  }
+
+  .movie-card img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="https://example.com" class="logo">STREAMZONE</a>
+      <div class="nav-links">
+        <a href="https://example.com/inicio">Início</a>
+        <a href="https://example.com/series">Séries</a>
+        <a href="https://example.com/filmes">Filmes</a>
+        <a href="https://example.com/minha-lista">Minha Lista</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Filmes, séries e muito mais. Sem limites.</h1>
+      <p>Assista onde quiser. Cancele quando quiser.</p>
+    </div>
+  </section>
+
+  <section class="rows">
+    <div class="row">
+      <h2 class="row-title">Em alta</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img alt="Poster do filme Stranger Things, mostrando os personagens principais em estilo vintage dos anos 80" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme The Witcher, apresentando Geralt de Rivia em pose heroica" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme Breaking Bad, mostrando Walter White em fundo amarelo" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme La Casa de Papel, apresentando a máscara icônica de Salvador Dalí" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme The Crown, mostrando a coroa real britânica" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2 class="row-title">Continuar assistindo</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img alt="Poster do filme Black Mirror, mostrando uma tela quebrada" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme The Umbrella Academy, mostrando os irmãos Hargreeves" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme Dark, apresentando a caverna misteriosa" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme Narcos, mostrando Pablo Escobar" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+        <div class="movie-card">
+          <img alt="Poster do filme Peaky Blinders, mostrando Thomas Shelby" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    });
+
+    const movieCards = document.querySelectorAll('.movie-card');
+    movieCards.forEach(card => {
+      card.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.1)';
+      });
+      
+      card.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
