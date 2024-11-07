@@ -13,11 +13,12 @@
   }
 
   .header {
-    background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
     padding: 20px 40px;
     position: fixed;
     width: 100%;
     z-index: 999;
+    transition: background-color 0.3s ease;
   }
 
   .nav {
@@ -78,28 +79,93 @@
     margin-bottom: 20px;
   }
 
-  .movie-row {
+  .movie-grid {
     display: flex;
-    gap: 10px;
     overflow-x: auto;
+    gap: 15px;
     padding: 20px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .movie-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .movie-card {
-    min-width: 200px;
-    transition: transform 0.3s;
+    flex: 0 0 auto;
+    width: 250px;
+    position: relative;
+    transition: transform 0.3s ease;
     cursor: pointer;
+  }
+
+  .movie-card img {
+    width: 250px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: all 0.3s ease;
   }
 
   .movie-card:hover {
     transform: scale(1.1);
+    z-index: 2;
   }
 
-  .movie-card img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 4px;
+  .movie-card:hover img {
+    height: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  }
+
+  .movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 10px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .movie-card:hover .movie-info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .row {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .row:hover .scroll-button {
+    opacity: 1;
+  }
+
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+  }
+
+  .scroll-left {
+    left: 0;
+  }
+
+  .scroll-right {
+    right: 0;
   }
 
   @media (max-width: 768px) {
@@ -109,6 +175,10 @@
     
     .hero-content p {
       font-size: 1.2rem;
+    }
+
+    .movie-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
   }
 </style>
@@ -137,42 +207,86 @@
   <section class="rows">
     <div class="row">
       <h2 class="row-title">Em alta</h2>
-      <div class="movie-row">
+      <button class="scroll-button scroll-left">←</button>
+      <button class="scroll-button scroll-right">→</button>
+      <div class="movie-grid">
         <div class="movie-card">
-          <img alt="Demon slayer" src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/big-poster-filme-anime-demon-slayer-mugen-train-90x60-cm-poster.webp" width="200" height="300">
+          <img alt="One punch man" src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/81NXSwvq5JL._AC_UF1000%2C1000_QL80_.jpg" width="200" height="300">
+          <div class="movie-info">
+            <h3>One punch man</h3>
+            <p>2015 • 2 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Boku no hero" src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/my-hero-academia_f9ae.jpg" width="200" height="300">
+          <div class="movie-info">
+            <h3>Boku no hero</h3>
+            <p>2016 • 7 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
-          <img alt="One punch man" src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/81NXSwvq5JL._AC_UF1000%2C1000_QL80_.jpg" width="200" height="300">
+          <img alt="demon slayer" src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/big-poster-filme-anime-demon-slayer-mugen-train-90x60-cm-poster.webp" width="200" height="300">
+          <div class="movie-info">
+            <h3>Demon slayer</h3>
+            <p>2021 • 3 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Poster do filme La Casa de Papel, apresentando a máscara icônica de Salvador Dalí" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>La Casa de Papel</h3>
+            <p>2017 • 5 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Poster do filme The Crown, mostrando a coroa real britânica" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>The Crown</h3>
+            <p>2016 • 5 Temporadas</p>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row">
       <h2 class="row-title">Continuar assistindo</h2>
-      <div class="movie-row">
+      <button class="scroll-button scroll-left">←</button>
+      <button class="scroll-button scroll-right">→</button>
+      <div class="movie-grid">
         <div class="movie-card">
           <img alt="Poster do filme Black Mirror, mostrando uma tela quebrada" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>Black Mirror</h3>
+            <p>2011 • 5 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Poster do filme The Umbrella Academy, mostrando os irmãos Hargreeves" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>The Umbrella Academy</h3>
+            <p>2019 • 3 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Poster do filme Dark, apresentando a caverna misteriosa" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>Dark</h3>
+            <p>2017 • 3 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Poster do filme Narcos, mostrando Pablo Escobar" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>Narcos</h3>
+            <p>2015 • 3 Temporadas</p>
+          </div>
         </div>
         <div class="movie-card">
           <img alt="Poster do filme Peaky Blinders, mostrando Thomas Shelby" src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0" width="200" height="300">
+          <div class="movie-info">
+            <h3>Peaky Blinders</h3>
+            <p>2013 • 6 Temporadas</p>
+          </div>
         </div>
       </div>
     </div>
@@ -182,20 +296,29 @@
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.header');
       if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
       } else {
         header.style.backgroundColor = 'transparent';
       }
     });
 
-    const movieCards = document.querySelectorAll('.movie-card');
-    movieCards.forEach(card => {
-      card.addEventListener('mouseover', function() {
-        this.style.transform = 'scale(1.1)';
+    document.querySelectorAll('.row').forEach(row => {
+      const movieGrid = row.querySelector('.movie-grid');
+      const scrollLeftBtn = row.querySelector('.scroll-left');
+      const scrollRightBtn = row.querySelector('.scroll-right');
+
+      scrollLeftBtn.addEventListener('click', () => {
+        movieGrid.scrollBy({
+          left: -300,
+          behavior: 'smooth'
+        });
       });
-      
-      card.addEventListener('mouseout', function() {
-        this.style.transform = 'scale(1)';
+
+      scrollRightBtn.addEventListener('click', () => {
+        movieGrid.scrollBy({
+          left: 300,
+          behavior: 'smooth'
+        });
       });
     });
   </script>
