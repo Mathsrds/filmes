@@ -1,237 +1,599 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html><head><base href="/">
 <meta charset="UTF-8">
-<title>STREAMZONE</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+<title>Alpha Attire - Moda Masculina Premium</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STREAMZONE | Filmes e Séries</title>
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --card: #17171f;
+      --text: #f6f6f7;
+      --muted: #b5b7c3;
+      --accent: #e50914;
+      --accent-hover: #ff2935;
+    }
 
-body {
-  background-color: #141414;
-  color: #fff;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-/* HEADER */
-.header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-  padding: 20px 40px;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
+    body {
+        background-color: #f5f5f5;
+      background: radial-gradient(circle at top, #1a1b25, var(--bg) 40%);
+      color: var(--text);
+      min-height: 100vh;
+    }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    nav {
+        background-color: #1a1a1a;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent);
+    }
 
-.logo {
-  color: #E50914;
-  font-size: 2rem;
-  font-weight: bold;
-}
+    .nav-logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 2rem;
+        border-radius: 50%;
+        object-fit: cover;
+    .logo {
+      color: var(--accent);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+    }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 2rem;
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+    }
 
-/* HERO */
-.hero {
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/6e32b96a-d4be-4e44-a19b-1bd2d2279b51/ee068656-14b9-4821-89b4-53b4937d9f1c/BR-pt-20220516-popsignuptwoweeks-perspective_alpha_website_small.jpg') center/cover;
-}
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
 
-.hero h1 {
-  font-size: 3rem;
-}
+    nav a:hover {
+        color: #2F4F4F;
+    }
+    .nav-links a:hover { color: var(--accent-hover); }
 
-/* ROWS */
-.rows {
-  padding: 40px;
-}
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
 
-.row {
-  margin-bottom: 40px;
-  position: relative;
-}
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                    url('/a/a8ba8350-8103-472b-9ae9-fe2623e58e8d');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+        z-index: -1;
+      min-height: 86vh;
+      display: flex;
+      align-items: end;
+      padding: 0 5vw 4rem;
+      background:
+        linear-gradient(90deg, rgba(8, 8, 12, 0.95) 15%, rgba(8, 8, 12, 0.55) 45%, rgba(8, 8, 12, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80') center / cover no-repeat;
+    }
 
-.row-title {
-  margin-bottom: 15px;
-}
+    .hero-content {
+        text-align: center;
+        color: white;
+        padding: 2rem;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* 🔥 CARROSSEL CORRIGIDO */
-.movie-grid {
-  display: flex;
-  flex-wrap: nowrap; /* NÃO QUEBRA LINHA */
-  overflow-x: auto;
-  gap: 15px;
-  scroll-behavior: smooth;
-}
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
 
-.movie-grid::-webkit-scrollbar {
-  display: none;
-}
+    .hero-content p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
 
-/* CARD */
-.movie-card {
-  flex: 0 0 250px; /* TAMANHO FIXO */
-  transition: transform 0.3s;
-  cursor: pointer;
-}
+    .shop-button {
+        margin-top: 2rem;
+        padding: 1rem 2.5rem;
+        background-color: #2F4F4F;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 620px;
+      margin-top: 5rem;
+    }
 
-.movie-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 5px;
-}
+    .shop-button:hover {
+        background-color: #1a1a1a;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    .badge {
+      display: inline-block;
+      background: rgba(229, 9, 20, 0.18);
+      color: #ff9ea3;
+      border: 1px solid rgba(229, 9, 20, 0.4);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
 
-.movie-card:hover {
-  transform: scale(1.1);
-}
+    .shop-button:active {
+        transform: translateY(-1px);
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 0.9rem;
+    }
 
-/* INFO */
-.movie-info {
-  margin-top: 5px;
-}
+    .about {
+        padding: 5rem 2rem;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        position: relative;
+        min-height: 100vh; /* Added to ensure full height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.55;
+    }
 
-/* BOTÕES */
-.scroll-button {
-  position: absolute;
-  top: 40%;
-  width: 40px;
-  height: 40px;
-  background: rgba(0,0,0,0.6);
-  border: none;
-  color: white;
-  cursor: pointer;
-  z-index: 2;
-}
+    .about::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('/a/ed68398d-f50f-4294-a379-eede2613fbf7');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Added for better scrolling effect */
+        z-index: -1;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
 
-.scroll-left { left: 0; }
-.scroll-right { right: 0; }
+    .about h2, .about p {
+        color: white;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    .btn {
+      border: none;
+      border-radius: 6px;
+      padding: 0.78rem 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
 
+    .products {
+        padding: 5rem 2rem;
+        background-color: white;
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .products h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #1a1a1a;
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.16);
+      color: white;
+    }
+
+    .product-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
+        background-color: #ffffff;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.26); }
+
+    .product-image {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+    main {
+      padding: 2rem 5vw 4rem;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    .section-title {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.1);
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .product-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+    .card {
+      background: var(--card);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-card:hover .product-info {
+        transform: translateY(0);
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.45);
+    }
+
+    .product-info h3 {
+        color: #1a1a1a;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info p {
+        color: #2F4F4F;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    .card-info {
+      padding: 0.85rem;
+    }
+
+    .product-info button {
+        width: 100%;
+        padding: 1rem;
+        background-color: #2F4F4F;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    .card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-info button:hover {
+        background-color: #1a1a1a;
+        transform: translateY(-3px);
+    .meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .contact {
+        padding: 5rem 2rem;
+        background-color: #1a1a1a;
+        color: white;
+        text-align: center;
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 1.2rem 5vw 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .contact form {
+        max-width: 500px;
+        margin: 0 auto;
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero { min-height: 74vh; padding-bottom: 2.4rem; }
+      .card img { height: 220px; }
+    }
+
+    .contact input,
+    .contact textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .contact button {
+        background-color: #2F4F4F;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .contact button:hover {
+        background-color: #1a1a1a;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
 </style>
+  </style>
 </head>
-
 <body>
+    <nav>
+        <img src="/a/6bf6f748-3dc7-4931-8fd2-82b9308d3dba" alt="Logo Alpha Attire" class="nav-logo">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#products">Produtos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
 
-<header class="header">
-  <div class="nav">
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Alpha Attire</h1>
+            <p>Desperte o líder que existe em você</p>
+            <a href="#products" class="shop-button">SHOP</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Sobre Nós</h2>
+        <p>"Se você busca roupas que combinam estilo, qualidade e confiança, veio ao lugar certo. Convidamos você a explorar nossa coleção e descobrir o que Alpha Attire Store tem a oferecer. Junte-se a nós em nossa jornada de estilo e elegância, e vista a confiança que o define como um verdadeiro Alfa"</p>
+  <header>
     <div class="logo">STREAMZONE</div>
-    <div class="nav-links">
-      <span>Início</span>
-      <span>Séries</span>
-      <span>Filmes</span>
+    <ul class="nav-links">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#em-alta">Em Alta</a></li>
+      <li><a href="#novidades">Novidades</a></li>
+      <li><a href="#minha-lista">Minha Lista</a></li>
+    </ul>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span class="badge">Lançamento STREAMZONE</span>
+      <h1>Noite de Ação: Destinos Cruzados</h1>
+      <p>
+        Uma produção original STREAMZONE com perseguições intensas, reviravoltas inesperadas e
+        personagens marcantes. Prepare a pipoca e assista agora.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#em-alta">▶ Assistir Agora</a>
+        <a class="btn btn-secondary" href="#minha-lista">＋ Minha Lista</a>
+      </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="hero">
-  <h1>Filmes, séries e muito mais.</h1>
-</section>
-
-<section class="rows">
-
-  <!-- EM ALTA -->
-  <div class="row">
-    <h2 class="row-title">🔥 Em alta</h2>
-
-    <button class="scroll-button scroll-left">←</button>
-    <button class="scroll-button scroll-right">→</button>
-
-    <div class="movie-grid">
-
-      <div class="movie-card">
-        <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/81NXSwvq5JL._AC_UF1000%2C1000_QL80_.jpg">
-        <div class="movie-info">One Punch Man</div>
+  <main>
+    <section id="em-alta">
+      <h2 class="section-title">🔥 Em Alta</h2>
+      <div class="row">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80" alt="Filme Horizonte Sombrio">
+          <div class="card-info"><h3>Horizonte Sombrio</h3><p class="meta">Ação • 2026 • 2h02</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=80" alt="Filme Código Nebuloso">
+          <div class="card-info"><h3>Código Nebuloso</h3><p class="meta">Suspense • 2025 • 1h52</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80" alt="Filme Fogo no Asfalto">
+          <div class="card-info"><h3>Fogo no Asfalto</h3><p class="meta">Aventura • 2024 • 2h11</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1581905764498-f1b60bae941a?auto=format&fit=crop&w=600&q=80" alt="Filme Vórtice Final">
+          <div class="card-info"><h3>Vórtice Final</h3><p class="meta">Ficção • 2026 • 2h07</p></div>
+        </article>
       </div>
+    </section>
 
-      <div class="movie-card">
-        <a href="bokunohero.html">
-          <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/my-hero-academia_f9ae.jpg">
-        </a>
-        <div class="movie-info">Boku no Hero</div>
+    <section id="products" class="products">
+        <h2>Nossa Coleção</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/a/b023f9f8-9998-425d-9468-4ca39f901e3a" alt="Moletom Alpha Attire Branco" width="300" height="400">
+                </div>
+                <div class="product-info">
+                    <h3>Moletom Alpha Classic Branco</h3>
+                    <p>R$ 249,90</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/a/51852a00-a2b4-4293-b7b4-61a7c2cdf0b8" alt="Moletom Alpha Attire Preto" width="300" height="400">
+                </div>
+                <div class="product-info">
+                    <h3>Moletom Alpha Classic Preto</h3>
+                    <p>R$ 249,90</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </div>
+    <section id="novidades">
+      <h2 class="section-title">✨ Novidades</h2>
+      <div class="row">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=600&q=80" alt="Série Cidade Velada">
+          <div class="card-info"><h3>Cidade Velada</h3><p class="meta">Série • Drama • 8 episódios</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?auto=format&fit=crop&w=600&q=80" alt="Série Distrito 9">
+          <div class="card-info"><h3>Distrito 9</h3><p class="meta">Série • Sci‑Fi • 10 episódios</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=600&q=80" alt="Filme Última Frequência">
+          <div class="card-info"><h3>Última Frequência</h3><p class="meta">Mistério • 2026 • 1h46</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1603190287605-e6ade32fa852?auto=format&fit=crop&w=600&q=80" alt="Filme Maré Vermelha">
+          <div class="card-info"><h3>Maré Vermelha</h3><p class="meta">Thriller • 2026 • 2h04</p></div>
+        </article>
       </div>
+    </section>
 
-      <div class="movie-card">
-        <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/big-poster-filme-anime-demon-slayer-mugen-train-90x60-cm-poster.webp">
-        <div class="movie-info">Demon Slayer</div>
+    <section id="contact" class="contact">
+        <h2>Entre em Contato</h2>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+        <div style="margin-top: 2rem;">
+            <h3>Redes Sociais</h3>
+            <div style="margin-top: 1rem;">
+                <a href="https://www.instagram.com/attire_alpha/" style="color: white; margin: 0 10px;">Instagram</a>
+                <a href="https://facebook.com/alphaattire" style="color: white; margin: 0 10px;">Facebook</a>
+                <a href="https://wa.me/5551993883780" style="color: white; margin: 0 10px;">WhatsApp</a>
+            </div>
+        </div>
+    <section id="minha-lista">
+      <h2 class="section-title">📌 Minha Lista</h2>
+      <div class="row">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80" alt="Filme Arquivo Ômega">
+          <div class="card-info"><h3>Arquivo Ômega</h3><p class="meta">Ação • 2025 • 2h15</p></div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=600&q=80" alt="Série Noite Digital">
+          <div class="card-info"><h3>Noite Digital</h3><p class="meta">Série • Techno‑thriller</p></div>
+        </article>
       </div>
+    </section>
+  </main>
 
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
-        <div class="movie-info">La Casa de Papel</div>
-      </div>
-
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
-        <div class="movie-info">The Crown</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- CONTINUAR -->
-  <div class="row">
-    <h2 class="row-title">▶ Continuar assistindo</h2>
-
-    <button class="scroll-button scroll-left">←</button>
-    <button class="scroll-button scroll-right">→</button>
-
-    <div class="movie-grid">
-
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
-        <div class="movie-info">Black Mirror</div>
-      </div>
-
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
-        <div class="movie-info">Umbrella Academy</div>
-      </div>
-
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
-        <div class="movie-info">Dark</div>
-      </div>
-
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
-        <div class="movie-info">Narcos</div>
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-<script>
-document.querySelectorAll('.row').forEach(row => {
-  const grid = row.querySelector('.movie-grid');
-
-  row.querySelector('.scroll-left').onclick = () => {
-    grid.scrollBy({ left: -300, behavior: 'smooth' });
-  };
-
-  row.querySelector('.scroll-right').onclick = () => {
-    grid.scrollBy({ left: 300, behavior: 'smooth' });
-  };
-});
-</script>
-
+    <script>
+        document.querySelectorAll('nav a, .shop-button').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body></html>
+  <footer>
+    STREAMZONE © 2026 • Sua plataforma de filmes e séries favorita.
+  </footer>
 </body>
 </html>
