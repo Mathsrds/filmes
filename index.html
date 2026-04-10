@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <title>STREAMZONE</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -17,31 +19,65 @@ body {
   color: #fff;
 }
 
+/* HEADER */
 .header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
   padding: 20px 40px;
-  background: #000;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  color: red;
+  color: #E50914;
   font-size: 2rem;
-  text-decoration: none;
+  font-weight: bold;
 }
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/6e32b96a-d4be-4e44-a19b-1bd2d2279b51/ee068656-14b9-4821-89b4-53b4937d9f1c/BR-pt-20220516-popsignuptwoweeks-perspective_alpha_website_small.jpg') center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+/* ROWS */
 .rows {
   padding: 40px;
 }
 
-.row-title {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.row {
+  margin-bottom: 40px;
+  position: relative;
 }
 
-/* 🔥 AQUI ESTÁ A CORREÇÃO */
+.row-title {
+  margin-bottom: 15px;
+}
+
+/* 🔥 CARROSSEL CORRIGIDO */
 .movie-grid {
   display: flex;
-  gap: 15px;
+  flex-wrap: nowrap; /* NÃO QUEBRA LINHA */
   overflow-x: auto;
+  gap: 15px;
   scroll-behavior: smooth;
 }
 
@@ -49,15 +85,16 @@ body {
   display: none;
 }
 
+/* CARD */
 .movie-card {
-  flex: 0 0 auto; /* ESSENCIAL */
-  width: 200px;
+  flex: 0 0 250px; /* TAMANHO FIXO */
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .movie-card img {
   width: 100%;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -66,49 +103,135 @@ body {
   transform: scale(1.1);
 }
 
+/* INFO */
 .movie-info {
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: 5px;
 }
+
+/* BOTÕES */
+.scroll-button {
+  position: absolute;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-left { left: 0; }
+.scroll-right { right: 0; }
+
 </style>
 </head>
 
 <body>
 
 <header class="header">
-  <a class="logo">STREAMZONE</a>
+  <div class="nav">
+    <div class="logo">STREAMZONE</div>
+    <div class="nav-links">
+      <span>Início</span>
+      <span>Séries</span>
+      <span>Filmes</span>
+    </div>
+  </div>
 </header>
+
+<section class="hero">
+  <h1>Filmes, séries e muito mais.</h1>
+</section>
 
 <section class="rows">
 
-  <h2 class="row-title">🎌 Animes</h2>
+  <!-- EM ALTA -->
+  <div class="row">
+    <h2 class="row-title">🔥 Em alta</h2>
 
-  <div class="movie-grid">
+    <button class="scroll-button scroll-left">←</button>
+    <button class="scroll-button scroll-right">→</button>
 
-    <div class="movie-card">
-      <a href="onepunch.html">
+    <div class="movie-grid">
+
+      <div class="movie-card">
         <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/81NXSwvq5JL._AC_UF1000%2C1000_QL80_.jpg">
-      </a>
-      <div class="movie-info">One Punch Man</div>
-    </div>
+        <div class="movie-info">One Punch Man</div>
+      </div>
 
-    <div class="movie-card">
-      <a href="bokunohero.html">
-        <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/my-hero-academia_f9ae.jpg">
-      </a>
-      <div class="movie-info">Boku no Hero</div>
-    </div>
+      <div class="movie-card">
+        <a href="bokunohero.html">
+          <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/my-hero-academia_f9ae.jpg">
+        </a>
+        <div class="movie-info">Boku no Hero</div>
+      </div>
 
-    <div class="movie-card">
-      <a href="demonslayer.html">
+      <div class="movie-card">
         <img src="https://raw.githubusercontent.com/Mathsrds/filmes/refs/heads/main/big-poster-filme-anime-demon-slayer-mugen-train-90x60-cm-poster.webp">
-      </a>
-      <div class="movie-info">Demon Slayer</div>
-    </div>
+        <div class="movie-info">Demon Slayer</div>
+      </div>
 
+      <div class="movie-card">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
+        <div class="movie-info">La Casa de Papel</div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
+        <div class="movie-info">The Crown</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTINUAR -->
+  <div class="row">
+    <h2 class="row-title">▶ Continuar assistindo</h2>
+
+    <button class="scroll-button scroll-left">←</button>
+    <button class="scroll-button scroll-right">→</button>
+
+    <div class="movie-grid">
+
+      <div class="movie-card">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
+        <div class="movie-info">Black Mirror</div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
+        <div class="movie-info">Umbrella Academy</div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
+        <div class="movie-info">Dark</div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0">
+        <div class="movie-info">Narcos</div>
+      </div>
+
+    </div>
   </div>
 
 </section>
+
+<script>
+document.querySelectorAll('.row').forEach(row => {
+  const grid = row.querySelector('.movie-grid');
+
+  row.querySelector('.scroll-left').onclick = () => {
+    grid.scrollBy({ left: -300, behavior: 'smooth' });
+  };
+
+  row.querySelector('.scroll-right').onclick = () => {
+    grid.scrollBy({ left: 300, behavior: 'smooth' });
+  };
+});
+</script>
 
 </body>
 </html>
